@@ -19,6 +19,7 @@ if( !class_exists( 'YouTubePlayListCarousel' ) ) {
 
         public static function setup() {
             add_action( 'wp_loaded', [ __CLASS__, 'register_scripts' ], 10, 0 );
+            add_action( 'wp_enqueue_scripts', [ __CLASS__, 'artson_load_scripts' ], 10, 0 );
             add_action( 'the_posts', [ __CLASS__, 'maybe_load_scripts' ] );
             add_shortcode( 'youtube-playlist', [ __CLASS__, 'shortcode' ] );
         }
@@ -51,6 +52,16 @@ if( !class_exists( 'YouTubePlayListCarousel' ) ) {
             <div id="yt-carousel-app"></div>
             <?php
             return ob_get_clean();
+        }
+
+
+        public static function artson_load_scripts() {
+            global $wp;
+            $slug = add_query_arg( [], $wp->request );
+
+            if( 'artson' == $slug ) {
+                self::_load_scripts();
+            }
         }
 
 
