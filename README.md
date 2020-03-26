@@ -1,24 +1,5 @@
 # youtube-playlist-carousel
 
-## Project setup
-```
-npm install
-```
+A plugin that will display the first few videos from a specific YouTube playlist.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+**Note:** This plugin is in a prototype stage, so full carousel features have not yet been implemented, but they're in the works. It's also configured to only work for a specific playlist belonging to the UCF College of Arts & Humanities, but I will probably open that up with a settings menu in the future.
